@@ -72,6 +72,3 @@ fn <- str_c('birds-and-bees')
 ggsave(paste('/tmp/',fn,'.jpg',sep=''), width=1080, height=1400, units='px', dpi=110)
 ggsave(paste('/tmp/',fn,'.svg',sep=''), width=1080, height=1400, units='px', dpi=110, device = grDevices::svg)
 system(paste('scour /tmp/',fn,'.svg /tmp/',fn,'.svgz',sep=''))
-
-source('upload-svg.R', local = T)
-
