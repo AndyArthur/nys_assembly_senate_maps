@@ -9,7 +9,7 @@ sen <-
   rmapshaper::ms_simplify()
 
 # replace with your key
-votes <- fromJSON('https://legislation.nysenate.gov/api/3/bills/2023/s1856a?key=49fCHARAWjylZZT7Oavh1qvpJbmbJxKK')
+votes <- fromJSON('https://legislation.nysenate.gov/api/3/bills/2023/s1856a?key=XXXXXX')
 
 votes <- tibble(
   DISTRICT = votes[["result"]][["votes"]][["items"]][["memberVotes"]][1][['items']][['AYE']][1][1][[1]][[2]][,'districtCode'],
@@ -86,5 +86,3 @@ fn <- str_c('birds-bees-senate')
 ggsave(paste('/tmp/',fn,'.jpg',sep=''), width=1080, height=1400, units='px', dpi=110)
 ggsave(paste('/tmp/',fn,'.svg',sep=''), width=1080, height=1400, units='px', dpi=110, device = grDevices::svg)
 system(paste('scour /tmp/',fn,'.svg /tmp/',fn,'.svgz',sep=''))
-
-source('upload-svg.R', local = T)
