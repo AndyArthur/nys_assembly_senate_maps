@@ -39,12 +39,6 @@ getBillInfo <- \(billno, year) {
   if(billinfo[billinfo['name'] == 'BILL NO',]$value == '') 
     bill.pg <- getBillWebpage(billno, year-1)
   
-  clients <- c('Barrett', 'Bronson', 'Burke', 'Buttenschon',
-               'Conrad', 'Gunther', 'Eachus', 'Hunter', 'Jacobson',
-               'Jean-Pierre', 'Jones', 'Lunsford',
-               'McMahon', 'Pheffer Amato', 'Santabarbara', 'Ramos', 'Sayegh',
-               'Sillitti', 'Steck', 'Stern', 'Stirpe', 'Wallace', 'Woerner')
-  
   if (billinfo[billinfo['name'] == 'SAME AS',]$value != '')
     sameas.pg <- getBillWebpage(billinfo[billinfo['name'] == 'SAME AS',]$value, year)
   
